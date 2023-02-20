@@ -1,7 +1,18 @@
 {
-  "name": "lw-ui",
+  "name": "wind-ui-2023",
   "version": "0.1.0",
-  "private": true,
+  "description": "测试UI库",
+  "author": "Lw0909",
+  "private": false,
+  "main": "build/index.js",
+  "module": "build/index.js",
+  "types": "build/index.d.ts",
+  "license": "MIT",
+  "keywords": [
+    "Wind",
+    "UI",
+    "React"
+  ],
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.20.5",
     "@fortawesome/fontawesome-svg-core": "1.2.28",
@@ -28,11 +39,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "clean": "rimraf ./build",
+    "build": "npm run clean && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./build/index.css"
   },
   "eslintConfig": {
     "extends": [
@@ -81,6 +95,7 @@
     "babel-plugin-named-exports-order": "^0.0.2",
     "prop-types": "^15.8.1",
     "react-docgen-typescript-loader": "^3.7.2",
+    "rimraf": "^4.1.2",
     "webpack": "^5.75.0"
   }
 }

@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "outDir": "build",
+        "module": "esnext",// 指定模块打包格式 esm/cjs/amd/umd
+        "target": "es5", // 目标版本 es5就是支持es5
+        "declaration": true, // 对每一个js自动生成.d.ts文件
+        "jsx": "react", //react| react-native|preserve
+        "moduleResolution": "node", // classic|node
+        "allowSyntheticDefaultImports": true // 一般都是true
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "src/**/*.test.tsx",
+        "src/**/*.stories.tsx"
+    ]
+}
